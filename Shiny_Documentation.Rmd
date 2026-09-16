@@ -1,0 +1,76 @@
+---
+title: "Shiny Application Documentation"
+author: "Parvaneh Rezaei"
+date: "2026-09-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Purpose
+
+This R script creates a simple interactive user interface using the Shiny package. The application demonstrates basic Shiny components, including headings, text, an image, and an interactive slider.
+
+## Inputs
+
+The application accepts user input through an interactive slider. The user can move the slider to select a value.
+
+## R Script
+
+The Shiny package is loaded before creating the application.
+
+```{r}
+library(shiny)
+```
+
+The user interface contains the main elements of the Shiny application.
+
+```{r}
+ui <- fluidPage(
+  titlePanel("Shiny User Interface Project"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput(
+        "value",
+        "Select a value:",
+        min = 1,
+        max = 100,
+        value = 50
+      )
+    ),
+    
+    mainPanel(
+      h2("Welcome to the Shiny Application"),
+      p("Use the slider to select a value."),
+      textOutput("selectedValue")
+    )
+  )
+)
+```
+
+The server processes the user's slider selection and displays the selected value.
+
+```{r}
+server <- function(input, output) {
+  output$selectedValue <- renderText({
+    paste("Selected value:", input$value)
+  })
+}
+```
+
+The following code starts the Shiny application.
+
+```{r}
+shinyApp(ui = ui, server = server)
+```
+
+## Outputs
+
+The application displays a Shiny user interface with a title, descriptive text, an interactive slider, and the value selected by the user.
+
+## AI-Assisted Formatting
+
+AI assistance was used to improve the Markdown organization, add clear section headings, and format the R code blocks. The final content and formatting were reviewed for clarity and consistency.
