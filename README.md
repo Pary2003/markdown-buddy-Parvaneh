@@ -7,7 +7,7 @@ This project demonstrates how to create a simple interactive user interface usin
 The purpose of this project is to practice building and organizing a basic Shiny application and using interactive user interface elements.
 
 ## Main Script
-- `app.R` – Contains the code for the Shiny application.
+- Shiny_Documentation.Rmd
 
 ## Dependencies
 - R
@@ -35,7 +35,7 @@ shiny::runApp()
 
 ## Running the Application
 1. Open the project in RStudio or Posit Cloud.
-2. Open `app.R`.
+2. Open Shiny_Documentation.Rmd
 3. Run the application.
 4. View and interact with the Shiny interface.
 
